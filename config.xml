@@ -18,8 +18,6 @@
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="org.apache.cordova.vibration" version="0.3.0" />
-	<gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
-	<gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
 	<!--gap:plugin name="com.phonegap.plugins.childbrowser" version="5.0.0" /-->
 	
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -55,9 +53,6 @@
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait.png"    gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
-	<gap:splash src="res/screen/ios/Default-568h@2x.png" 		   gap:platform="ios"     width="640" height="1136" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />

@@ -26,15 +26,48 @@
         <title>Kelder</title>
     </head>
     <body id="body">
-    	<img src="img/logo2.png" id="logo" />
-        <div id="scan">SCAN</div>
-        <h1 id="title"></h1>
+    	<div id="logo"></div>
+        <div id="scan"><span>SCAN</span></div>
+        <img src="img/NotFoun-icon.png" id="notfound" onClick="$(this).fadeOut('fast',function(){$('#scan').fadeIn('fast');});" />
+        <div id="found">
+        	<h1>Bienvenido</h1>
+            <br>
+            <h2>José Pérez Martínez</h2>
+            <br>
+            <h3>Cortesía</h3>
+            <h4><span>50%</span> OFF</h4>
+            <img src="img/OK-boton.png" id="ok" onClick="rescan();" />
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="barcodescanner.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <!--script type="text/javascript" src="js/index.js"></script-->
         <script type="text/javascript">
-            app.initialize();
+            //app.initialize();
+			document.addEventListener("deviceready", init, false);
+			function init() {
+				document.querySelector("#scan").addEventListener("click", startScan, false);
+				navigator.notification.vibrate(2500);
+			}
+			
+			function startScan() {
+				cordova.plugins.barcodeScanner.scan(
+					function (result) {
+						alert("Result:"+result);
+						$('#found').fadeIn('fast');
+					}, 
+					function (error) {
+						alert("Scanning failed: " + error);
+						$('#notfound').fadeIn();
+					}
+				);
+			}
+			function rescan(){
+				$('#found').fadeOut('fast',function(){
+					$('#found h2').html('&nbsp;');
+					$('#found h4 span').html('&nbsp;');
+					$('#scan').fadeIn('fast');
+				});
+			}
         </script>
     </body>
 </html>

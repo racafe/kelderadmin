@@ -16,25 +16,43 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+@font-face{ 
+	font-family: 'Avenir Demibold';
+	src: url('../fonts/avenir_demibold.ttf') format('truetype');
+}
+@font-face{ 
+	font-family: 'Avenir Regular';
+	src: url('../fonts/avenir_demibold.ttf') format('truetype');
+}
 * {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    margin:0px;
+    padding:0px;
 }
 
 html,body {
     background-color:#fdfdfd;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:20px;
     height:100%;
-    margin:0px;
-    padding:0px;
     text-transform:uppercase;
     width:100%;
+	height:100%;
 	overflow:hidden;
+	position:relative;
 }
-#scan{position:fixed; width:100%; height:50px; line-height:50px; font-size:20pt; text-align:center; color:#fff; text-shadow:#333 2px 2px; background:#039; bottom:0;}
+#body{background:url(../img/Ipad-BG.png) no-repeat; background-size:100% 100%;}
+#logo{position:absolute; left:50%; top:0; margin-left:-146px; width:293px; height:320px; background:url(../img/Kelder-Logo.png) no-repeat; background-size:100% 100%;}
 /* Portrait layout (default) */
-#logo{position:absolute; left:50%; top:50%; margin-top:-88px; margin-left:-106px; width:211px; height:176px }
+#scan{position:absolute; left:50%; bottom:18%; margin-left:-125px; width:250px; height:207px; background:url(../img/QR-icon.svg) no-repeat; background-size:100% 100%;}
+#scan span{position:absolute; width:100%; text-align:center; font-size:30px; bottom:-20px; line-height:35px; color:#356b8d; font-family:'Avenir Regular';}
+#notfound{width:612px; height:166px; position:absolute; bottom:18%; left:50%; margin-left:-306px; display:none;}
 #title{position:absolute; width:100%; text-align:center; top:50%; height:50px; margin-top:-25px; line-height:50px; color:#fff;}
+#found{width:50%; position:absolute; top:50%; text-align:center; left:25%; display:none;}
+#found h1{color:#356b8d; font-family:'Avenir Demibold';}
+#found h2{color:#4398bd; font-family:'Avenir Regular';}
+#found h3{color:#4398bd; font-family:'Avenir Regular';}
+#found h4{color:#356b8d; font-family:'Avenir Demibold';}
+#found #ok{width:170px; position:absolute; bottom:-80px; left:50%; margin-left:-85px;}
