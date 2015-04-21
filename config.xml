@@ -28,7 +28,7 @@
 	
 	<preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="phonegap-version" value="3.7.0" />
-    <!--preference name="orientation"      value="landscape" /-->
+    <preference name="orientation"      value="landscape" />
     <preference name="target-device"    value="universal" />
     <preference name="Fullscreen"       value="true" />
     <preference name="webviewbounce"    value="false" />
