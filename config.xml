@@ -14,7 +14,7 @@
     </author>
 	
 	<access origin="*" />
-	
+	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.3" />
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:plugin name="org.apache.cordova.vibration" version="0.3.0" />
@@ -27,11 +27,15 @@
     </feature-->
 	
 	<preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="phonegap-version" value="3.3.0" />
+    <preference name="phonegap-version" value="3.7.0" />
     <!--preference name="orientation"      value="landscape" /-->
     <preference name="target-device"    value="universal" />
     <preference name="Fullscreen"       value="true" />
     <preference name="webviewbounce"    value="false" />
+	<preference name="SplashScreenDelay" value="3000" />
+	<preference name="AutoHideSplashScreen" value="false" />
+	<preference name="auto-hide-splash-screen" value="false" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
