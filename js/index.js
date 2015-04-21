@@ -53,15 +53,16 @@ var app = {
     },
 
     scan: function() {
+		alert("scanning");
         console.log('scanning');
         document.getElementById('scan').style.display = "none";
 		document.getElementById('logo').style.display = "none";
         cordova.plugins.barcodeScanner.scan( function (result) { 
-/*            alert("We got a barcode\n" + 
+            alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
-*/
+
 			if(!result.cancelled){
 				navigator.notification.vibrate(2500);
 				result = result.text;
