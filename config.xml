@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.technit.gasoperez"
         version   = "1.0.0">
-    <name>La Rotonda</name>
+    <name>Kelder Admin</name>
 
     <description>
-        Escaner de códigos QR para gasolinera La Rotonda
+        Escaner de códigos QR para Kelder
     </description>
 
     <author href="http://technit.com.mx" email="ventas@technit.com.mx">
