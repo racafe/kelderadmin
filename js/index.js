@@ -56,8 +56,7 @@ var app = {
         console.log('scanning');
         document.getElementById('scan').style.display = "none";
 		document.getElementById('logo').style.display = "none";
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-        scanner.scan( function (result) { 
+        cordova.plugins.barcodeScanner.scan( function (result) { 
 /*            alert("We got a barcode\n" + 
             "Result: " + result.text + "\n" + 
             "Format: " + result.format + "\n" + 
@@ -111,18 +110,5 @@ var app = {
 			document.getElementById('logo').style.display = "block";
 			document.getElementById('body').style.backgroundColor = "#fff";
         } );
-    },
-
-    encode: function() {
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
-            alert("encode success: " + success);
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
-
     }
-
 };
