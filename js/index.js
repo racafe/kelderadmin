@@ -106,7 +106,8 @@ var app = {
 
         }, function (error) { 
             console.log("Scanning failed: ", error); 
-			document.getElementById('title').innerHTML = "";
+			alert(error);
+			document.getElementById('title').innerHTML = error;
 			document.getElementById('scan').style.display = "block";
 			document.getElementById('logo').style.display = "block";
 			document.getElementById('body').style.backgroundColor = "#fff";
