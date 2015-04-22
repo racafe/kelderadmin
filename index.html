@@ -63,10 +63,8 @@
 						if(!result.cancelled){
 							navigator.notification.vibrate(2500);
 							result = result.text;
-							alert(result);
 							var res = result.split("size=100x100");
 							if(res[0]!=undefined){
-								alert(res[0]);
 								$.ajax({
 									url: "http://soporte.technit.com.mx/Kelder/responses/checkQR.php",
 									dataType: "jsonp",
@@ -77,7 +75,6 @@
 											$('#found').fadeIn('fast',function(){
 												$('#found h2').html(response.nombre);
 												$('#found h4 span').html(response.descuento);
-												$('#scan').fadeIn('fast');
 											});
 										}else{
 											$('#notfound').fadeIn();
@@ -95,8 +92,8 @@
 						}
 					}, 
 					function (error) {
-						alert("Scanning failed: " + error);
-						$('#notfound').fadeIn();
+						alert("Ocurrió un error. Favor de intentar nuevamente");
+						//$('#notfound').fadeIn();
 					}
 				);
 			}
