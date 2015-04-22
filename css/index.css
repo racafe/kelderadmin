@@ -36,10 +36,13 @@
 html,body {
     background-color:#fdfdfd;
     font-size:20px;
-    height:100%;
     text-transform:uppercase;
     width:1024px;
 	height:768px;
+	max-width:1024px;
+	max-height:768px;
+	min-width:1024px;
+	min-height:768px;
 	overflow:hidden;
 	position:relative;
 }
