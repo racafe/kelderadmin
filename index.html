@@ -32,10 +32,10 @@
         <div id="found">
         	<h1>Bienvenido</h1>
             <br>
-            <h2>José Pérez Martínez</h2>
+            <h2></h2>
             <br>
             <h3>Cortesía</h3>
-            <h4><span>50%</span> OFF</h4>
+            <h4><span></span>% DE DESCUENTO</h4>
             <img src="img/OK-boton.png" id="ok" onClick="rescan();" />
         </div>
         <script type="text/javascript" src="cordova.js"></script>
@@ -68,7 +68,7 @@
 							if(res[0]!=undefined){
 								alert(res[0]);
 								$.ajax({
-									url: "http://soporte.technit.com.mx/Kelder/checkQR.php",
+									url: "http://soporte.technit.com.mx/Kelder/responses/checkQR.php",
 									dataType: "jsonp",
 									data: {qr:res[0]},
 									timeout:3000,
@@ -93,8 +93,6 @@
 						}else{
 							$('#scan').fadeIn('fast');
 						}
-						alert("Result:"+result);
-						$('#found').fadeIn('fast');
 					}, 
 					function (error) {
 						alert("Scanning failed: " + error);
