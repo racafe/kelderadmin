@@ -51,6 +51,7 @@
 					}, 
 					function (error) {
 						alert("Ocurrió un error. Favor de intentar nuevamente");
+						$('#scan').fadeIn('fast');
 						//$('#notfound').fadeIn();
 					}
 				);
