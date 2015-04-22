@@ -47,6 +47,13 @@
 			function init() {
 				document.querySelector("#scan").addEventListener("click", startScan, false);
 				navigator.notification.vibrate(2500);
+				
+				setTimeout(function(){
+					$('#splash').fadeOut(function(){
+						StatusBar.overlaysWebView(true);
+						StatusBar.show();
+					});
+				},3000);
 			}
 			
 			function startScan() {
