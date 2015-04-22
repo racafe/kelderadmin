@@ -40,7 +40,7 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <!--script type="text/javascript" src="js/index.js"></script-->
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             //app.initialize();
 			document.addEventListener("deviceready", init, false);
@@ -57,8 +57,42 @@
 			}
 			
 			function startScan() {
+				$('#scan').fadeOut('fast');
 				cordova.plugins.barcodeScanner.scan(
 					function (result) {
+						if(!result.cancelled){
+							navigator.notification.vibrate(2500);
+							result = result.text;
+							alert(result);
+							var res = result.split("size=100x100");
+							if(res[0]!=undefined){
+								alert(res[0]);
+								$.ajax({
+									url: "http://soporte.technit.com.mx/Kelder/checkQR.php",
+									dataType: "jsonp",
+									data: {qr:res[0]},
+									timeout:3000,
+									success: function (response) {
+										if(response.success){
+											$('#found').fadeIn('fast',function(){
+												$('#found h2').html(response.nombre);
+												$('#found h4 span').html(response.descuento);
+												$('#scan').fadeIn('fast');
+											});
+										}else{
+											$('#notfound').fadeIn();
+										}
+									},
+									error: function(objRequest,errortype){
+										alert("Ocurrió un error. Favor de intentar nuevamente");
+									}
+								});
+							}else{
+								$('#notfound').fadeIn();
+							}
+						}else{
+							$('#scan').fadeIn('fast');
+						}
 						alert("Result:"+result);
 						$('#found').fadeIn('fast');
 					}, 
